@@ -1,4 +1,4 @@
-package D2;
+package CodingTestMemory.SWEA.D2.P1974;
 
 import java.util.Arrays;
 import java.util.Scanner;
