@@ -1,6 +1,7 @@
 package CodingTestMemory.BJ.Silv4.P10825;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 class Student implements Comparable<Student> {
