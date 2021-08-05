@@ -20,23 +20,14 @@ public class P13305 {
         }
 
         // 로직 부분
-        int minidx, idx;
-        long sum, totalDistance, totalPrice = 0;
-        int i = N - 1; // 뒤에서부터 탐색
-        while(i > 0) {
-            minidx = 0;
-            sum = 0;
-            idx = i - 1;
-            totalDistance = 0;
-            for (int j = i - 1; j >= 0; j--) { // 현 위치보다 앞에있는 원소 중 최솟값 인덱스를 탐색
-                sum += dist[idx--];
-                if (gasPrices[j] <= gasPrices[minidx]) {
-                    minidx = j;
-                    totalDistance = sum;
-                }
+        long totalPrice = 0;
+        long minCost = gasPrices[0];
+
+        for(int i=0; i<N-1; i++) {
+            if(gasPrices[i] < minCost) {
+                minCost = gasPrices[i];
             }
-            totalPrice += (totalDistance * gasPrices[minidx]);
-            i = minidx;
+            totalPrice += (minCost * dist[i]);
         }
 
         // 출력 부분
