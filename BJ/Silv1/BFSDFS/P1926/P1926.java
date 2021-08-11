@@ -1,4 +1,4 @@
-package CodingTestMemory.BJ.Silv1.P1926;
+package CodingTestMemory.BJ.Silv1.BFSDFS.P1926;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -16,41 +16,32 @@ public class P1926 {
 
     static int[][] board;
     static boolean[][] visited;
+    static int[] dx = {1, 0, -1, 0};
+    static int[] dy = {0, 1, 0, -1};
     static int N, M;
     static Queue<Node> queue = new LinkedList<>();
 
-    public static int bfs(int idx1, int idx2) {
-        int size = 0;
-        int x, y;
-        queue.add(new Node(idx1, idx2));
-        visited[idx1][idx2] = true;
-        size++;
+    public static int bfs(int y, int x) {
+        int cnt = 0;
+        queue.add(new Node(y, x));
+        visited[y][x] = true;
         while(!queue.isEmpty()) {
             Node r = queue.remove();
-            x = r.x;
-            y = r.y;
-            if(x - 1 >= 0 && board[y][x - 1] == 1 && !visited[y][x - 1]) {
-                queue.add(new Node(y, x - 1));
-                visited[y][x - 1] = true;
-                size++;
-            }
-            if(x + 1 < M && board[y][x + 1] == 1 && !visited[y][x + 1]) {
-                queue.add(new Node(y, x + 1));
-                visited[y][x + 1] = true;
-                size++;
-            }
-            if(y + 1 < N && board[y + 1][x] == 1 && !visited[y + 1][x]) {
-                queue.add(new Node(y + 1, x));
-                visited[y + 1][x] = true;
-                size++;
-            }
-            if(y - 1 >= 0 && board[y - 1][x] == 1 && !visited[y - 1][x]) {
-                queue.add(new Node(y - 1, x));
-                visited[y - 1][x] = true;
-                size++;
+            cnt++;
+            for(int dir = 0; dir < 4; dir++) {
+                int nx = r.x + dx[dir];
+                int ny = r.y + dy[dir];
+                if(nx < 0 || nx >= M || ny < 0 || ny >= N) {
+                    continue;
+                }
+                if(visited[ny][nx] || board[ny][nx] == 0) {
+                    continue;
+                }
+                visited[ny][nx] = true;
+                queue.add(new Node(ny, nx));
             }
         }
-        return size;
+        return cnt;
     }
 
     public static void main(String[] args) throws IOException {
