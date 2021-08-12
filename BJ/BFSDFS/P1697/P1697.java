@@ -1,4 +1,4 @@
-package CodingTestMemory.BJ.Silv1.BFSDFS.P1697;
+package CodingTestMemory.BJ.BFSDFS.P1697;
 
 import java.util.LinkedList;
 import java.util.Queue;

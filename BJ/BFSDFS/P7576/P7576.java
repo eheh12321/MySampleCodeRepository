@@ -1,4 +1,4 @@
-package CodingTestMemory.BJ.Silv1.BFSDFS.P7576;
+package CodingTestMemory.BJ.BFSDFS.P7576;
 
 import java.io.IOException;
 import java.util.*;

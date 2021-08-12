@@ -1,4 +1,4 @@
-package CodingTestMemory.BJ.Silv1.BFSDFS.P2178;
+package CodingTestMemory.BJ.BFSDFS.P2178;
 
 import java.io.BufferedReader;
 import java.io.IOException;

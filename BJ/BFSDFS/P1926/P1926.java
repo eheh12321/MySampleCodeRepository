@@ -1,4 +1,4 @@
-package CodingTestMemory.BJ.Silv1.BFSDFS.P1926;
+package CodingTestMemory.BJ.BFSDFS.P1926;
 
 import java.io.*;
 import java.util.LinkedList;

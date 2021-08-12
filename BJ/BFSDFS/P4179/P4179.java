@@ -1,9 +1,8 @@
-package CodingTestMemory.BJ.Silv1.BFSDFS.P4179;
+package CodingTestMemory.BJ.BFSDFS.P4179;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
