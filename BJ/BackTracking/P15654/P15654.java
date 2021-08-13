@@ -1,4 +1,4 @@
-package CodingTestMemory.BJ.Sliv3.P15654;
+package CodingTestMemory.BJ.BackTracking.P15654;
 
 import java.io.*;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package CodingTestMemory.BJ.Sliv3.P15649;
+package CodingTestMemory.BJ.BackTracking.P15649;
 
 import java.io.*;
 import java.util.StringTokenizer;

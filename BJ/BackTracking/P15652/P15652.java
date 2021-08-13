@@ -1,9 +1,9 @@
-package CodingTestMemory.BJ.Sliv3.P15651;
+package CodingTestMemory.BJ.BackTracking.P15652;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class P15651 {
+public class P15652 {
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static int[] arr;
 
@@ -15,13 +15,12 @@ public class P15651 {
         int M = Integer.parseInt(st.nextToken());
 
         arr = new int[M];
-
-        dfs(N, M, 0);
+        dfs(N, M, 0, 0);
 
         bw.flush();
         bw.close();
     }
-    public static void dfs(int N, int M, int depth) throws IOException {
+    public static void dfs(int N, int M, int depth, int idx) throws IOException {
         if(M == depth) {
             for(int e : arr) {
                 bw.write(String.valueOf(e) + " ");
@@ -29,9 +28,9 @@ public class P15651 {
             bw.newLine();
             return;
         }
-        for(int i = 0; i < N; i++) {
+        for(int i = idx; i < N; i++) {
             arr[depth] = i + 1;
-            dfs(N, M, depth + 1);
+            dfs(N, M, depth + 1, i);
         }
     }
 }
