@@ -8,25 +8,25 @@ public class P15650 {
     public static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static int[] arr;
     static boolean[] visited;
+    static int N, M;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
         StringTokenizer st = new StringTokenizer(str);
 
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
-
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
         arr = new int[M];
         visited = new boolean[N];
 
-        dfs(0, N, M, 0);
+        dfs(0,0);
 
         bw.flush();
         bw.close();
     }
 
-    public static void dfs(int idx, int N, int M, int depth) throws IOException {
+    public static void dfs(int idx, int depth) throws IOException {
         if(depth == M) {
             for(int e : arr) {
                 bw.write(String.valueOf(e) + " ");
@@ -38,7 +38,7 @@ public class P15650 {
             if(!visited[i]) { // 아직 방문한 적이 없으면
                 visited[i] = true;
                 arr[depth] = i + 1;
-                dfs(i + 1, N, M, depth + 1);
+                dfs(i + 1,depth + 1);
                 visited[i] = false;
             }
         }

@@ -1,12 +1,13 @@
-package CodingTestMemory.BJ.BackTracking.P15654;
+package CodingTestMemory.BJ.BackTracking.P15656;
 
 import java.io.*;
 import java.util.Arrays;
 import java.util.StringTokenizer;
-
-public class P15654 {
+/*
+    이전 문제에서 Visited 배열만 빼면 중복 포함한 완전탐색.
+ */
+public class P15656 {
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    static boolean[] visited;
     static int[] numArr;
     static int[] ans;
     static int N, M;
@@ -20,12 +21,8 @@ public class P15654 {
             return;
         }
         for(int i = 0; i < N; i++) {
-            if(!visited[i]) {
-                visited[i] = true;
-                ans[depth] = numArr[i];
-                func(depth + 1);
-                visited[i] = false;
-            }
+            ans[depth] = numArr[i];
+            func(depth + 1);
         }
     }
 
@@ -37,7 +34,6 @@ public class P15654 {
         M = Integer.parseInt(stk.nextToken());
         ans = new int[M];
         numArr = new int[N];
-        visited = new boolean[N];
 
         stk = new StringTokenizer(br.readLine());
         for(int i = 0; i < N; i++) { // 데이터 입력

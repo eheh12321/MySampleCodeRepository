@@ -1,17 +1,17 @@
-package CodingTestMemory.BJ.BackTracking.P15654;
+package CodingTestMemory.BJ.BackTracking.P15655;
 
 import java.io.*;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class P15654 {
+public class P15655 {
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static boolean[] visited;
     static int[] numArr;
     static int[] ans;
     static int N, M;
 
-    public static void func(int depth) throws IOException {
+    public static void func(int depth, int idx) throws IOException {
         if(depth == M) { // 데이터 출력
             for(int e : ans) {
                 bw.write(String.valueOf(e) + " ");
@@ -19,11 +19,11 @@ public class P15654 {
             bw.newLine();
             return;
         }
-        for(int i = 0; i < N; i++) {
+        for(int i = idx; i < N; i++) {
             if(!visited[i]) {
                 visited[i] = true;
                 ans[depth] = numArr[i];
-                func(depth + 1);
+                func(depth + 1, i + 1);
                 visited[i] = false;
             }
         }
@@ -45,7 +45,7 @@ public class P15654 {
         }
         Arrays.sort(numArr); // 데이터 배열 정렬
 
-        func(0);
+        func(0, 0);
 
         bw.flush();
         bw.close();
