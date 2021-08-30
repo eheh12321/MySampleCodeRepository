@@ -1,17 +1,17 @@
-package CodingTestMemory.BJ.BackTracking.P15665;
+package CodingTestMemory.BJ.BackTracking.NandM.P15666;
 
 import java.io.*;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class P15665 {
+public class P15666 {
 
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static int N, M;
     static int[] nums;
     static int[] arr;
 
-    public static void func(int depth) throws IOException {
+    public static void func(int depth, int idx) throws IOException {
         if(depth == M) {
             for(int e : arr) {
                 bw.write(String.valueOf(e) + " ");
@@ -20,10 +20,10 @@ public class P15665 {
             return;
         }
         int prev = -1;
-        for(int i = 0; i < N; i++) {
+        for(int i = idx; i < N; i++) {
             if(prev != nums[i]) {
                 arr[depth] = nums[i];
-                func(depth + 1);
+                func(depth + 1, i);
                 prev = nums[i];
             }
         }
@@ -41,7 +41,7 @@ public class P15665 {
             nums[i] = Integer.parseInt(stk.nextToken());
         }
         Arrays.sort(nums);
-        func(0);
+        func(0, 0);
         bw.flush();
         bw.close();
     }

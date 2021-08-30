@@ -1,4 +1,4 @@
-package CodingTestMemory.BJ.BackTracking.P15663;
+package CodingTestMemory.BJ.BackTracking.NandM.P15663;
 
 import java.io.*;
 import java.util.Arrays;
