@@ -25,7 +25,7 @@ public class P3055 {
         }
     }
     
-    public static void print(int flag) {
+    public static void print(int flag) { // 테스트용
         System.out.printf("[%d]\n", flag);
         for(int j = 0; j < R; j++) {
             for(int i = 0; i < C; i++) {
@@ -39,7 +39,7 @@ public class P3055 {
     public static void bfs() {
         Queue<Node> queue = new LinkedList<>();
         for (Node water : waters) {
-            queue.add(water);
+            queue.add(water); // 물이 먼저 이동한 다음에
         }
         queue.add(dochi); // 도치가 이동해야 한다
         visited[stop.y][stop.x][1] = true; // 물은 굴로 들어갈 수 없다
@@ -51,24 +51,24 @@ public class P3055 {
                 int nx = dx[i] + e.x;
                 int ny = dy[i] + e.y;
                 if(nx < 0 || ny < 0 || nx >= C || ny >= R) {
-                    continue;
+                    continue; // OutOfBounds
                 }
                 if(visited[ny][nx][e.flag]) { // 이미 방문했으면
                     continue;
                 }
                 if(map[ny][nx] == 'X' || map[ny][nx] == '*') {
-                    continue; // 돌은 통과가 불가하다
+                    continue; // 돌은 통과가 불가하다 + 물끼리 통과 X
                 }
-                if(e.flag == 0) {
+                if(e.flag == 0) { // 도치가 움직일때
                     if(visited[ny][nx][1] && (dist[e.y][e.x][0] + 1 >= dist[ny][nx][1])) {
-                        continue;
+                        continue; // 물이 이미 도착해있는 경우 이동불가
                     }
                 }
                 dist[ny][nx][e.flag] = dist[e.y][e.x][e.flag] + 1;
                 visited[ny][nx][e.flag] = true;
                 queue.add(new Node(ny, nx, e.flag));
             }
-            //print(e.flag);
+            //print(e.flag); // TEST
         }
     }
 
@@ -93,8 +93,10 @@ public class P3055 {
                 }
             }
         }
+
         bfs();
-        if(dist[stop.y][stop.x][0] != 0) {
+
+        if(dist[stop.y][stop.x][0] != 0) { // 도치가 굴에 도착했으면
             System.out.println(dist[stop.y][stop.x][0]);
         } else {
             System.out.println("KAKTUS");
