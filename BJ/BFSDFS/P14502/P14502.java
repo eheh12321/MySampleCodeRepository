@@ -22,6 +22,7 @@ public class P14502 {
     static int[] dx = {1, 0, -1, 0};
     static int[] dy = {0, 1, 0, -1};
 
+    // 벽 위치 초기화
     public static void init_wall() {
         int cnt = 0;
         for(int j = 0; j < N; j++) {
@@ -76,6 +77,7 @@ public class P14502 {
         map[y][x] = 3; // 새로 이동함.
     }
 
+    // 바이러스 퍼트리기
     public static void bfs(Node start) {
 
         Queue<Node> queue = new LinkedList<>();
@@ -103,6 +105,7 @@ public class P14502 {
         }
     }
 
+    // 총 안전영역 세기
     public static int calc_safeArea() {
         int cnt = 0;
         for(int j = 0; j < N; j++) {
@@ -115,6 +118,7 @@ public class P14502 {
         return cnt;
     }
 
+    // 벽 위치 정하기
     public static void backtracking(int depth) {
         if(depth == 3) {
             // 벽 움직이고
@@ -140,13 +144,6 @@ public class P14502 {
             arr[depth] = i;
             backtracking(depth + 1);
         }
-    }
-
-    public static void print() {
-        for(int j = 0; j < N; j++) {
-            System.out.println(Arrays.toString(map[j]));
-        }
-        System.out.println("-------");
     }
 
     public static void main(String[] args) throws IOException {
