@@ -4,7 +4,7 @@ import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class BufferedOutputStream1 {
+class BufferedOutputStream1 {
     public static void main(String[] args) {
         try {
             FileOutputStream fos = new FileOutputStream("./src/CodingTestMemory/자바의정석/Chap15/123.txt");

@@ -9,7 +9,7 @@ import java.io.IOException;
  * 따라서, 1바이트로 표현 가능한 영문자나 숫자는 관계 없으나 한글의 경우 3바이트를 사용해야 하기 때문에 한글이 당연히! 깨져서 나온다
  * 이를 해결하기 위해서는 보조 스트림을 같이 사용하거나 문자열 스트림을 사용해야 한다. (Reader/Writer)
  */
-public class FileInputStream1 {
+class FileInputStream1 {
     public static void main(String[] args) throws IOException {
         FileInputStream fis = new FileInputStream("./src/CodingTestMemory/자바의정석/Chap15/FileInputStream1.java");
         FileOutputStream fos = new FileOutputStream("./src/CodingTestMemory/자바의정석/Chap15/FileOutputStream1.txt");

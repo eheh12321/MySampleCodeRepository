@@ -8,7 +8,7 @@ import java.util.Arrays;
  * ByteInput/OutputStream - 바이트 배열에 데이터를 입출력하는데 사용되는 함수
  * (1바이트씩 읽는다. - 문자 입출력에는 적합하지 않음. char:2byte 이기 때문)
  */
-public class InputStream1 {
+class InputStream1 {
     public static void main(String[] args) {
         byte[] inSrc = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         byte[] outSrc = null;

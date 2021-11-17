@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FileReader1 {
+class FileReader1 {
     public static void main(String[] args) {
         try {
             String fileName = "./src/CodingTestMemory/자바의정석/Chap15/FileOutputStream1.txt";
