@@ -38,9 +38,9 @@ class Problem3 {
             info2.add(radio_member);
             info2.add(radio_nonmember);
 
-            JPanel panel2 = new JPanel(new GridLayout(1, 1, 10, 10));
+            JPanel panel2 = new JPanel(new GridLayout(2, 1, 10, 10));
             panel2.add(info1, BorderLayout.NORTH);
-            panel2.add(info2, BorderLayout.SOUTH);
+            panel2.add(info2, BorderLayout.CENTER);
 
             String[] colNames = {"번호","상품 이름","단가","수량","금액"};
             Object[][] data = {
