@@ -118,11 +118,23 @@ class Problem2 {
             this.addKeyListener(new KeyAdapter() {
                 @Override
                 public void keyPressed(KeyEvent e) {
-                    System.out.println("키 입력 발생");
+                    System.out.println("키 입력 발생: " + e.getKeyCode());
                     int key = e.getKeyCode();
                     if(key >= KeyEvent.VK_0 && key <= KeyEvent.VK_9) {
                         numBtn[key - 48].doClick();
 
+                    } else if (key == 107) { // Plus
+                        funcBtn[0].doClick();
+                    } else if (key == 109) { // Minus
+                        funcBtn[1].doClick();
+                    } else if (key == 106) { // Multiply
+                        funcBtn[2].doClick();
+                    } else if (key == 27) {// ESC
+                        funcBtn[3].doClick();
+                    } else if (key == 10) { // Enter
+                        funcBtn[4].doClick();
+                    } else if (key == 111) { // Divide
+                        funcBtn[5].doClick();
                     }
                     validate();
                 }
