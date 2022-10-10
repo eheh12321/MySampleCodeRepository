@@ -1,4 +1,4 @@
-package CodingTestMemory.자료구조.Bitmask;
+package CodingTestMemory.자료구조.Others.Bitmask;
 
 public class Bitmask {
 

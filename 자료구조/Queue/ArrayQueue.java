@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.NoSuchElementException;
 
-public class ArrayQueue<E> implements Queue<E> {
+// 코드 참고: https://st-lab.tistory.com/183?category=856997
+public class ArrayQueue<E> {
 
     private static final int DEFAULT_CAPACITY = 64;
     private Object[] array;
@@ -25,7 +26,6 @@ public class ArrayQueue<E> implements Queue<E> {
         this.front = this.rear = 0;
     }
 
-    @Override
     public boolean offer(E item) {
         if((rear + 1) % array.length == front) {
             System.out.println("큐가 가득찼습니다");
@@ -37,7 +37,6 @@ public class ArrayQueue<E> implements Queue<E> {
         return true;
     }
 
-    @Override
     public E poll() {
         if(size == 0) {
             return null;
@@ -57,7 +56,6 @@ public class ArrayQueue<E> implements Queue<E> {
         return item;
     }
 
-    @Override
     public E peek() {
         if(size == 0) {
             return null;

@@ -2,7 +2,8 @@ package CodingTestMemory.자료구조.Queue;
 
 import java.util.*;
 
-public class LinkedListQueue<E> implements Queue<E> {
+// 코드 참고: https://st-lab.tistory.com/184?category=856997
+public class LinkedListQueue<E> {
 
     private Node<E> head;
     private Node<E> tail;
@@ -13,7 +14,6 @@ public class LinkedListQueue<E> implements Queue<E> {
         this.size = 0;
     }
 
-    @Override
     public boolean offer(E e) { // enqueue (Tail에 삽입)
         Node<E> newNode = new Node<E>(e);
 
@@ -27,7 +27,6 @@ public class LinkedListQueue<E> implements Queue<E> {
         return true;
     }
 
-    @Override
     public E poll() { // dequeue (Head의 데이터 제거)
         if(size == 0) {
             return null;
@@ -43,7 +42,6 @@ public class LinkedListQueue<E> implements Queue<E> {
         return element;
     }
 
-    @Override
     public E peek() {
         if(size == 0) {
             return null;

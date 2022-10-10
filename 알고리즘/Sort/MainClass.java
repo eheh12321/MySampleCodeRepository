@@ -1,4 +1,4 @@
-package CodingTestMemory.자료구조.Sort;
+package CodingTestMemory.알고리즘.Sort;
 
 import java.io.*;
 

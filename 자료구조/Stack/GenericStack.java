@@ -2,6 +2,7 @@ package CodingTestMemory.자료구조.Stack;
 
 import java.util.EmptyStackException;
 
+// 코드 참고: https://st-lab.tistory.com/174?category=856997#arrr
 public class GenericStack<T> {
     class Node<T> {
         private T data;

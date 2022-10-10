@@ -1,4 +1,4 @@
-package CodingTestMemory.자료구조.Generic;
+package CodingTestMemory.자료구조.Others.Generic;
 
 public class Cat extends Animal {
 
