@@ -8,7 +8,8 @@
 - Root Node: 최상위 노드
 - Terminal Node (`Leaf Node, 단말 노드`): 자식 노드를 갖지 않는 노드
 - Internal Node(비단말 노드, 내부 노드): 단말 노드를 제외한 모든 노드
-- `Level`, `Height`: 트리의 높이 (Root = 0)
+- `Level`: 루트 = 0부터 내려갈수록 +1
+- `Height`: 트리의 높이 (가장 아래 단말노드 = 0, Root가 최댓값)
 - `Depth`: 루트 노드부터 현재 노드까지 오는데 거친 Edge의 개수
 
 <br>
