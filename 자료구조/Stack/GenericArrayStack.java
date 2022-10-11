@@ -5,19 +5,19 @@ import java.util.Comparator;
 import java.util.EmptyStackException;
 
 // 코드 참고: https://st-lab.tistory.com/174?category=856997
-public class GenericStack<E> implements Cloneable {
+public class GenericArrayStack<E> implements Cloneable {
     private static final int DEFAULT_CAPACITY = 10;
     private static final Object[] EMPTY_ARRAY = {};
 
     private Object[] array;
     private int size;
 
-    public GenericStack() {
+    public GenericArrayStack() {
         this.array = EMPTY_ARRAY;
         this.size = 0;
     }
 
-    public GenericStack(int size) { // 지정된 크기의 스택을 사용하고 싶은 경우
+    public GenericArrayStack(int size) { // 지정된 크기의 스택을 사용하고 싶은 경우
         this.array = new Object[size];
         this.size = size;
     }
@@ -102,7 +102,7 @@ public class GenericStack<E> implements Cloneable {
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-        GenericStack<?> cloneStack = (GenericStack<?>) super.clone(); // 단순 복사 객체 생성 (얕은 복사)
+        GenericArrayStack<?> cloneStack = (GenericArrayStack<?>) super.clone(); // 단순 복사 객체 생성 (얕은 복사)
         cloneStack.array = new Object[size]; // 내부 값 복사 (깊은 복사)
         System.arraycopy(array, 0, cloneStack.array, 0, size);
         return cloneStack;
