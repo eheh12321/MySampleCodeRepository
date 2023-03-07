@@ -1,5 +1,5 @@
 // 문제 - https://www.acmicpc.net/problem/1260
-
+// 인접행렬의 시간 복잡도 O(N^2)
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -18,6 +18,7 @@ public class Main {
         for(int i = 0; i < M; i++) {
             from = sc.nextInt() - 1;
             to = sc.nextInt() - 1;
+            // 양방향 연결
             graph[from][to] = 1;
             graph[to][from] = 1;
         }
@@ -32,7 +33,7 @@ public class Main {
         visited[V] = true;
         while(!queue.isEmpty()) {
             Integer e = queue.poll();
-            System.out.printf("%d ", e + 1);
+            System.out.printf("%d ", e + 1); // (노드는 1번부터 시작하므로)
             for(int i = 0; i < visited.length; i++) {
                 if(!visited[i] && graph[e][i] == 1) {
                     queue.add(i);
